@@ -1,0 +1,17 @@
+PSR (PHP Standard Recommendation) --> spesifikasi resmi yang dihasilkan dari PHP-FIG (Framework Interop Group) melalui workflow yang cukup panjang, yaitu Pre-Draft, Entrance Vote, Draft, Review, Accepted.
+
+Berdasarkan Index of PHP Standard Recommendations, sampai saat ini, ada 5 PSR accepted, 1 PSR sedang direview, 4 PSR dalam draft, yaitu :
+1. Accepted | PSR-0 | Autoloading Standard | N/A | N/A 
+2. Accepted | PSR-1 | Basic Coding Standard | N/A | N/A
+3. Accepted | PSR-2 | Coding Style Guide | N/A | N/A 
+4. Accepted | PSR-3 | Logger Interface | Jordi Boggiano | N/A 
+5. Accepted | PSR-4 | Autoloading Standard | Paul M. Jones | Phil Sturgeon
+6. Draft | PSR-5 | PHPDoc Standard | Mike van Riel | Phil Sturgeon 
+7. Review | PSR-6 | Caching Interface | Larry Garfield | Pádraic Brady
+8. Draft | PSR-7 | HTTP Message Interface | Matthew Weier O'Phinney | Phil Sturgeon
+9. Draft | PSR-8 | Huggable Interface | Larry Garfield | Cal Evans
+10. Draft | PSR-9 | Security Disclosure | Lukas Kahwe Smith | Korvin Szanto
+
+Tujuan PSR --> agar ditemukan solusi yang standard yang dapat digunakan pada tiap-tiap project.
+
+

@@ -1,0 +1,24 @@
+PHP (Hypertext Prepocessor) ==> open source bahasa script server-side yang dapat ditanamkan pada HTML(Hipertext Market Language). Cocok digunakan untuk pengembangan Web, membuat web dinamis secara cepat. Dirancang untuk dapat bekerja sama dengan database server. Tujuanya adalah membuat aplikasi-aplikasi yang dijalankan diatas teknologi web browser, tetapi proses keseluruhan dijalankan diatas web server. Kekuatan utamanya adalah konektifitas database dengan web.
+
+PHP diawali dengan tanda "<?php" dan diakhiri tanda "?>"
+Situs resmi PHP dapat dilihat di "www. php.net"
+
+Server-Side ==> teknik yang digunakan dalam pengembangan web, menggunakan script pada web server, menghasilkan respon yang disesuaikan untuk permintaan (klien) masing-masing pengguna ke situs web.
+
+Kelebihan PHP:
+
+1 . Bahasa pemrograman php adalah sebuah bahasa script yang tidak melakukan sebuah kompilasi dalam penggunanya.
+2. Web Server yang mendukung php dapat ditemukan dimana-mana dari mulai IIS sampai dengan apache, dengan konfigurasi yang relatif mudah.
+3. Dalam sisi pengembangan lebih mudah, karena banyaknya milis-milis dan developer yang siap membantu dalam pengembangan.
+4. Dalam sisi pemahaman, php adalah bahasa scripting yang paling mudah karena referensi yang banyak.
+5. PHP adalah bahasa open source yang dapat digunakan di berbagai mesin (linux, unix, windows) dan dapat dijalankan secara runtime melalui console serta juga dapat menjalankan perinta-perintah sistem.
+
+
+Kekurangan PHP :
+
+1. Tidak detail untuk pengembangan skala besar.
+2. Tidak memiliki sistem pemrograman berorientasi objek yang sesungguhnya.
+3. Tidak bisa memisahkan antara tampilan dengan logic dengan baik.
+4. PHP memiliki kelemahan security tertentu apabila programer tidak jeli dalam melakukan pemrograman dan kurang memperhatikan isu konfigurasi PHP.
+5. Kode PHP dapat dibaca orang, dan kompilasi hanya dapat dilakukan dengan tool yang mahal dari Zend.
+

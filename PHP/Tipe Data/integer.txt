@@ -1,0 +1,38 @@
+Tipe data berfungsi menentukan bagaimana cara program memproses suatu variable atau konstanta.
+
+TIPE DATA INTEGER
+--> berupa angka bulat spt : 1, 15, -135. Digunakan untuk angka yang bulat spt data barang, jumlah mahasiswa, dan stock. Tipe data dapat bernilai positif atau negatif. Dan jika tidak diberi tanda akan diasumsikan sebagai nilai positif.
+
+Contoh :
+<?php
+   $umur=21;
+   $harga=15000;
+   $rugi=-50000;
+ 
+   echo $umur; //21
+   echo "<br />";
+   echo $harga; //15000
+   echo "<br />";
+   echo $rugi; //-50000
+?>
+
+Dalam penggunaan variable dapat juga digunakan fungsi matematis spt penambahan, pengurangan, perkalian, pembagian, dll.
+
+Contoh :
+<?php
+   $a=14;
+   $b=16;
+   $c= $a + $b;
+   echo $c; // 30
+ 
+   $d=$a * $b;
+   echo $d; // 224
+?>
+
+!! Karena tidak memerlukan pendeklarasian variabel, maka ketika sebuah variabel berisi angka bulat, maka secara otomatis variabel tersebut di sebut sebagai variabel integer.
+
+Jangkauan angka integer tergantung kemampuan komputer, tapi biasanya dimulai dari -2,147,483,648 sampai +2,147,483,647, atau 32bit. Jika lebih dari ini sebaiknya gunakan tipe data float. Untuk mengetahui nilai maksimal tipe data integer dapat menggunakan fungsi " PHP_INT_MAX "
+Contoh : 
+<?php
+print PHP_INT_MAX; // 2147483647
+?>

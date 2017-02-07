@@ -1,0 +1,408 @@
+===PSR-2: CODING STYLE GUIDE===
+Panduan ini meluas dan memperluas PSR-1 , standar pengkodean dasar.
+
+Maksud dari panduan ini adalah untuk mengurangi gesekan kognitif saat memindai kode dari penulis yang berbeda. Ia melakukannya dengan pencacahan seperangkat bersama aturan dan harapan tentang bagaimana format kode PHP.
+
+1. OVERVIEW IKHTISAR
+a. Kode HARUS mengikuti "coding panduan gaya" PSR [ PSR-1 ].
+b. Kode harus menggunakan 4 ruang untuk indentasi, tidak tab.
+c. Ada TIDAK HARUS batas keras pada panjang garis; batas lembut HARUS 120 karakter; garis HARUS 80 karakter atau kurang.
+d. Ada HARUS satu baris kosong setelah namespace deklarasi, dan ada HARUS satu baris kosong setelah blok use deklarasi.
+e. Kurung membuka untuk kelas harus pergi pada baris berikutnya, dan menutup kurung harus pergi pada baris berikutnya setelah tubuh.
+f. Kurung membuka untuk metode harus pergi pada baris berikutnya, dan menutup kurung harus pergi pada baris berikutnya setelah tubuh.
+g. Visibilitas HARUS dideklarasikan pada semua properti dan metode; abstract dan final harus dideklarasikan sebelum visibilitas; static HARUS dinyatakan setelah visibilitas.
+h. kata kunci struktur pengendalian HARUS memiliki satu ruang setelah mereka; Metode dan fungsi panggilan HARUS TIDAK.
+i. Kurung membuka untuk struktur kontrol harus pergi pada baris yang sama, dan menutup kurung harus pergi pada baris berikutnya setelah tubuh.
+j. Kurung pembuka untuk struktur kontrol TIDAK HARUS memiliki spasi setelah mereka, dan menutup kurung untuk struktur kontrol TIDAK HARUS memiliki spasi sebelum.
+
+Contoh :
+<?php
+namespace Vendor\Package;
+
+use FooInterface;
+use BarClass as Bar;
+use OtherVendor\OtherPackage\BazClass;
+
+class Foo extends Bar implements FooInterface
+{
+    public function sampleMethod($a, $b = null)
+    {
+        if ($a === $b) {
+            bar();
+        } elseif ($a > $b) {
+            $foo->bar($arg1);
+        } else {
+            BazClass::bar($arg2, $arg3);
+        }
+    }
+
+    final public static function bar()
+    {
+        // method body
+    }
+}
+
+
+2. GENERAL UMUM
+1) Basic Coding Standard Dasar Coding Standard
+Kode HARUS mengikuti semua aturan yang digariskan dalam PSR-1 .
+
+2) Files arsip
+a. Semua file PHP harus menggunakan Unix LF (ganti baris) akhir baris.
+b. Semua file PHP harus diakhiri dengan baris kosong tunggal.
+c. Penutupan ?> Tag HARUS dihilangkan dari file yang hanya berisi PHP.
+
+3) Lines baris
+a. Ada TIDAK HARUS batas keras pada panjang garis.
+b. Batas lembut pada panjang garis HARUS 120 karakter; catur gaya otomatis HARUS memperingatkan tapi TIDAK HARUS kesalahan pada batas lembut.
+c. Garis TIDAK HARUS lebih panjang dari 80 karakter; garis lebih lama dari yang HARUS dibagi menjadi beberapa baris berikutnya tidak lebih dari 80 karakter masing-masing.
+d. Ada TIDAK HARUS trailing spasi di akhir baris non-kosong.
+e. baris kosong MUNGKIN ditambahkan untuk meningkatkan keterbacaan dan untuk menunjukkan blok terkait kode.
+f. Ada TIDAK HARUS lebih dari satu pernyataan per baris.
+
+4) Indenting Indentasi
+a. Kode HARUS menggunakan indent dari 4 ruang, dan TIDAK HARUS menggunakan tab untuk indentasi.
+
+Nb: Menggunakan hanya ruang, dan tidak spasi pencampuran dengan tab, membantu untuk menghindari masalah dengan diffs, patch, sejarah, dan penjelasan. Penggunaan ruang juga memudahkan untuk memasukkan halus sub-lekukan untuk antar-garis jajaran.
+
+5) Keywords and True/False/Null 
+a. PHP kata kunci HARUS dalam huruf kecil.
+b. PHP konstanta true , false , dan null HARUS dalam huruf kecil.
+
+
+3. NAMESPACE DAN USE DECLARATION
+a. Ketika hadir, ada HARUS satu baris kosong setelah namespace deklarasi.
+b. Ketika ini, semua use deklarasi harus pergi setelah namespace deklarasi.
+c. Ada HARUS satu use kata kunci per deklarasi.
+d. Ada HARUS satu baris kosong setelah use blok.
+
+Contoh :
+<?php
+namespace Vendor\Package;
+
+use FooClass;
+use BarClass as Bar;
+use OtherVendor\OtherPackage\BazClass;
+
+// ... additional PHP code ...
+
+
+4. CLASSES, PROPERTIES, AND METHODS
+1) EXTENDS DAN IMPLEMENTS 
+a. "extends" dan "implements" kata kunci HARUS dideklarasikan pada baris yang sama dengan nama kelas.
+b. Pembukaan kurung kurawal untuk kelas harus pergi pada baris sendiri; kurung kurawal menutup untuk kelas harus pergi pada baris berikutnya setelah tubuh.
+
+Contoh :
+<?php
+namespace Vendor\Package;
+
+use FooClass;
+use BarClass as Bar;
+use OtherVendor\OtherPackage\BazClass;
+
+class ClassName extends ParentClass implements \ArrayAccess, \Countable
+{
+    // constants, properties, methods
+}
+
+c. Daftar implements MUNGKIN dibagi di beberapa baris, di mana setiap baris berikutnya lebih menjorok sekali. Ketika melakukannya, item pertama dalam daftar HARUS di baris berikutnya, dan ada HARUS hanya satu antarmuka per baris.
+
+Contoh :
+<?php
+namespace Vendor\Package;
+
+use FooClass;
+use BarClass as Bar;
+use OtherVendor\OtherPackage\BazClass;
+
+class ClassName extends ParentClass implements
+    \ArrayAccess,
+    \Countable,
+    \Serializable
+{
+    // constants, properties, methods
+}
+
+2) PROPERTIES
+a. Visibilitas HARUS dideklarasikan pada semua properti.
+b. var kata kunci TIDAK HARUS digunakan untuk menyatakan sebuah properti.
+c. Ada TIDAK HARUS lebih dari satu properti dinyatakan per pernyataan.
+d. nama properti TIDAK BOLEH diawali dengan satu garis bawah untuk mengindikasikan dilindungi atau visibilitas pribadi.
+
+Contoh Deklarasi Properties :
+<?php
+namespace Vendor\Package;
+
+class ClassName
+{
+    public $foo = null;
+}
+
+3) METHODS
+a. Visibilitas HARUS dideklarasikan pada semua metode.
+b. nama metode TIDAK BOLEH diawali dengan satu garis bawah untuk mengindikasikan dilindungi atau visibilitas pribadi.
+c. nama metode TIDAK HARUS dideklarasikan dengan spasi setelah nama metode. Pembukaan brace harus pergi pada baris sendiri, dan brace penutupan harus pergi pada baris berikutnya tubuh. Ada TIDAK HARUS spasi setelah kurung buka, dan ada tidak HARUS spasi sebelum tanda kurung tutup.
+
+Contoh :
+<?php
+namespace Vendor\Package;
+
+class ClassName
+{
+    public function fooBarBaz($arg1, &$arg2, $arg3 = [])
+    {
+        // method body
+    }
+}
+
+4) METHOD ARGUMENTS
+a. Dalam daftar argumen, ada TIDAK HARUS spasi sebelum setiap koma, dan ada HARUS satu ruang setelah setiap koma.
+b. Metode argumen dengan nilai default harus pergi pada akhir daftar argumen.
+
+Contoh :
+<?php
+namespace Vendor\Package;
+
+class ClassName
+{
+    public function foo($arg1, &$arg2, $arg3 = [])
+    {
+        // method body
+    }
+}
+
+c. daftar argumen MUNGKIN dibagi di beberapa baris, di mana setiap baris berikutnya lebih menjorok sekali. Ketika melakukannya, item pertama dalam daftar HARUS di baris berikutnya, dan ada HARUS hanya satu argumen per baris.
+d. Ketika daftar argumen dibagi di beberapa baris, kurung tutup dan membuka brace harus ditempatkan bersama-sama pada jalur sendiri dengan satu ruang antara mereka.
+
+Contoh :
+<?php
+namespace Vendor\Package;
+
+class ClassName
+{
+    public function aVeryLongMethodName(
+        ClassTypeHint $arg1,
+        &$arg2,
+        array $arg3 = []
+    ) {
+        // method body
+    }
+}
+
+5) ABSTRACT, FINAL, DAN STATIC
+a. Ketika ini, abstract dan final deklarasi HARUS mendahului deklarasi visibilitas.
+b. Ketika ini, static deklarasi HARUS datang setelah deklarasi visibilitas.
+
+Contoh :
+<?php
+namespace Vendor\Package;
+
+abstract class ClassName
+{
+    protected static $foo;
+
+    abstract protected function zim();
+
+    final public static function bar()
+    {
+        // method body
+    }
+}
+
+6) METHOD DAN FUNCTION CALLS
+a. Ketika membuat sebuah metode atau fungsi panggilan, ada TIDAK HARUS ruang antara metode atau nama fungsi dan kurung buka, ada TIDAK HARUS spasi setelah kurung buka, dan ada tidak HARUS spasi sebelum tanda kurung tutup. Dalam daftar argumen, ada TIDAK HARUS spasi sebelum setiap koma, dan ada HARUS satu ruang setelah setiap koma.
+
+Contoh :
+<?php
+bar();
+$foo->bar($arg1);
+Foo::bar($arg2, $arg3);
+
+b. daftar argumen MUNGKIN dibagi di beberapa baris, di mana setiap baris berikutnya lebih menjorok sekali. Ketika melakukannya, item pertama dalam daftar HARUS di baris berikutnya, dan ada HARUS hanya satu argumen per baris.
+
+Contoh :
+<?php
+$foo->bar(
+    $longArgument,
+    $longerArgument,
+    $muchLongerArgument
+);
+
+
+5. CONTROL STRUCTURES
+Aturan gaya umum untuk struktur kontrol adalah sebagai berikut:
+a. Ada HARUS satu spasi setelah kata kunci struktur pengendalian
+b. Ada TIDAK HARUS spasi setelah kurung buka
+c. Ada TIDAK HARUS spasi sebelum kurung tutup
+d. Ada HARUS satu ruang antara kurung tutup dan brace pembukaan
+e. Struktur tubuh HARUS menjorok sekali
+f. Penutupan brace HARUS berada di baris berikutnya setelah tubuh
+
+Tubuh setiap struktur HARUS tertutup oleh kurung. Ini standarisasi bagaimana struktur terlihat, dan mengurangi kemungkinan memperkenalkan kesalahan sebagai baris baru ditambahkan ke tubuh.
+
+1) IS, ELSEIF, ELSE
+Sebuah if struktur terlihat seperti berikut ini. Perhatikan penempatan kurung, spasi, dan kawat gigi; dan bahwa else dan elseif berada di jalur yang sama seperti penjepit penutupan dari tubuh sebelumnya.
+Contoh :
+<?php
+if ($expr1) {
+    // if body
+} elseif ($expr2) {
+    // elseif body
+} else {
+    // else body;
+}
+
+Kata kunci elseif HARUS digunakan sebagai pengganti else if sehingga semua kata kunci kontrol terlihat seperti kata-kata tunggal.
+
+2) SWITCH, CASE
+Sebuah switch struktur terlihat seperti berikut ini. Perhatikan penempatan kurung, spasi, dan kawat gigi. The case pernyataan HARUS menjorok sekali dari switch , dan break kata kunci (keyword atau terminating lainnya) HARUS menjorok pada tingkat yang sama dengan case tubuh. Ada HARUS komentar seperti // no break ketika jatuh-melalui disengaja dalam non-kosong case tubuh.
+Contoh :
+<?php
+switch ($expr) {
+    case 0:
+        echo 'First case, with a break';
+        break;
+    case 1:
+        echo 'Second case, which falls through';
+        // no break
+    case 2:
+    case 3:
+    case 4:
+        echo 'Third case, return instead of break';
+        return;
+    default:
+        echo 'Default case';
+        break;
+}
+
+3) WHILE, DO WHILE
+a. Contoh While:
+<?php
+while ($expr) {
+    // structure body
+}
+
+b. Contoh Do While :
+<?php
+do {
+    // structure body;
+} while ($expr);
+
+4) FOR
+Contoh :
+<?php
+for ($i = 0; $i < 10; $i++) {
+    // for body
+}
+
+5) FOREACH
+Contoh :
+<?php
+foreach ($iterable as $key => $value) {
+    // foreach body
+}
+
+6) TRY, CATCH
+Contoh :
+<?php
+try {
+    // try body
+} catch (FirstExceptionType $e) {
+    // catch body
+} catch (OtherExceptionType $e) {
+    // catch body
+}
+
+
+6. CLOSURES (PENUTUPAN)
+a. Penutupan HARUS dideklarasikan dengan spasi setelah function kunci, dan spasi sebelum dan setelah use kata kunci.
+b. Pembukaan brace harus pergi pada baris yang sama, dan brace penutupan harus pergi pada baris berikutnya tubuh.
+c. Ada TIDAK HARUS spasi setelah kurung buka dari daftar argumen atau daftar variabel, dan ada tidak HARUS spasi sebelum tanda kurung penutupan daftar argumen atau daftar variabel.
+d. Dalam daftar argumen dan daftar variabel, ada TIDAK HARUS spasi sebelum setiap koma, dan ada HARUS satu ruang setelah setiap koma.
+e. Penutupan argumen dengan nilai default harus pergi pada akhir daftar argumen.
+
+Contoh Deklarasi penutupan :
+<?php
+$closureWithArgs = function ($arg1, $arg2) {
+    // body
+};
+
+$closureWithArgsAndVars = function ($arg1, $arg2) use ($var1, $var2) {
+    // body
+};
+
+f. daftar argumen dan daftar variabel MUNGKIN dibagi di beberapa baris, di mana setiap baris berikutnya lebih menjorok sekali. Ketika melakukannya, item pertama dalam daftar HARUS di baris berikutnya, dan ada HARUS hanya satu argumen atau variabel per baris.
+g. Saat daftar akhir (apakah argumen atau variabel) dibagi di beberapa baris, kurung tutup dan membuka brace harus ditempatkan bersama-sama pada jalur sendiri dengan satu ruang antara mereka.
+
+Contoh penutupan dengan dan tanpa daftar srgumen dan daftar variable :
+<?php
+$longArgs_noVars = function (
+    $longArgument,
+    $longerArgument,
+    $muchLongerArgument
+) {
+    // body
+};
+
+$noArgs_longVars = function () use (
+    $longVar1,
+    $longerVar2,
+    $muchLongerVar3
+) {
+    // body
+};
+
+$longArgs_longVars = function (
+    $longArgument,
+    $longerArgument,
+    $muchLongerArgument
+) use (
+    $longVar1,
+    $longerVar2,
+    $muchLongerVar3
+) {
+    // body
+};
+
+$longArgs_shortVars = function (
+    $longArgument,
+    $longerArgument,
+    $muchLongerArgument
+) use ($var1) {
+    // body
+};
+
+$shortArgs_longVars = function ($arg) use (
+    $longVar1,
+    $longerVar2,
+    $muchLongerVar3
+) {
+    // body
+};
+
+h. aturan format juga berlaku saat penutupan digunakan langsung dalam fungsi atau metode panggilan sebagai argumen.
+
+Contoh :
+<?php
+$foo->bar(
+    $arg1,
+    function ($arg2) use ($var1) {
+        // body
+    },
+    $arg3
+);
+
+
+7. CONCLUSION
+Ada banyak unsur gaya dan praktek sengaja dihilangkan oleh panduan ini. Ini termasuk tetapi tidak terbatas pada:
+a. Deklarasi variabel global dan konstanta global yang
+b. Deklarasi fungsi
+c. Operator dan tugas
+d. Inter-garis jajaran
+e. Komentar dan blok dokumentasi
+f. nama kelas prefiks dan sufiks
+g. Praktik terbaik
+
+rekomendasi masa depan MUNGKIN merevisi dan memperluas panduan ini untuk mengatasi orang-orang atau unsur-unsur lain dari gaya dan praktek.
+
+

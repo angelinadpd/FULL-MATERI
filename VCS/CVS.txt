@@ -1,0 +1,34 @@
+VERSION CONTROL SYSTEM (VCS)
+
+I. PENGERTIAN
+Version Control System (VCS) atau dikenal sebagai SCM (Source Code Manajemen) atau juga RCS (Revisi Control System) adalah sebuah infrastruktur yang dapat mendukung pengembangan software secara kolaboratif. Artinya, software ini mengelola perubahan ke kode sumber dari waktu ke waktu, melacak setiap modifikasi kode, dan jika terjadi kesalahan pengembang dapat membandigkan dengan versi sebelumnya untuk membantu proses perbaikan dengan meminimalkan gangguan terhadap anggota tim lainnya. Kemampuan kembali ke versi sebelumnya ini disebut reversibility.
+Setiap anggota tim pengembangan software dapat menulis kode programnya masing - masing kemudian digabungkan ke server yang sudah memiliki VCS yang digunakan. Proses yang terjadi dalam sebuah team akan lebih transparan dan terstruktur.
+
+II. ALASAN MENGAPA DIPERLUKAN VERSION CONTROL
+1. Bring Order to Chaos
+--> tersedia backup otomatis setiap melakukan check-in dan menyembunyikan backup sampai dibutuhkan. Hal ini lebih baik dari pada membuat backup sendiri dengan memanfaatkan fitur "save as" yang akan lebih rumit dengan penamaannya dan membingungkan.
+2. Short-term & Long-term Undo
+--> Memungkinkan melakukan undo per file, per direktori, atau file dalam direktori dengan satu perintah. Bergerak seperti mesin waktu yang dapat maju atau mundur di titik manapun di dalam history file atau direktori kerja yang diinginkan.
+3. Tracking Changes
+--> Tersedia log yang dapat menampilkan keterangan mengapa dilakukan perubahan sesuai dengan yang ditambahkan. Log ini dapat dilacak sehingga dapat diketahui perubahan apa saja yang telah dilakukan pada file dan file apa saja yang telah diubah.
+4. Sandboxing
+--> Memungkinkan melakukan eksperimen tanpa harus melakukan perubahan permanen terhadap source code di dalam lingkungan terisolasi yang disebut dengan "sandbox". Jika pengujian berhasil check-in dapat dilanjutkan, jika gagal check-in bida dibatalkan dan dikembalikan ke kondisi semula saat check-in terakhir.
+5. Kolaborasi
+--> Dapat melakukan update secara bersamaan tanpa merasa terganggu atau menganggu satu sama lain. Update yang dilakukan dapat disinkronisasi atau digabungkan dengan rekan yang lainnya.
+
+III. MANFAAT
+Pengembangan tanpa VCS akan lebih rentan dengan resiko sebab minimnya backup file yang dimiliki. Untuk itu VCS memiliki beberapa manfaat penting diantaranya :
+1. Histori perubahan file jangka panjang lengkap.
+--> meski bertahun-tahun histori tetap tesedia hanya saja tergantung sejauh mana pengguna dapat mengontrol penggantian nama dan pemindahan file. Hal ini juga sangat bermanfaat untuk dapat kembali ke versi sebelumnya sebagai langkah penanganan masalah.
+2. Bercabang dan penggabungan
+--> setiap anggota tim bekerja sesuai dengan versinya masing-masing tapi, pekerjaan tersebut masih tetap bisa digabungkan ke dalam satu server. Sehingga pengembang tetap bisa memverifikasi apakah perubahan pada setiap cabang tidak bertentangan.
+3. Lacak
+--> mampu melacak setiap perubahan yang terjadi, menghubungkannya ke proyek, dan pelacakan bug. Dilengkapi dengan keterangan pada setiap pesan yang menjelaskan maksud dan tujuan perubahan tersebut. Memungkinkan pengembang untuk membuat perubahan yang benar dan sesuai dengan desain jangka panjang yang dimaksud oleh sistem.
+
+IV. Daftar VCS
+Ada banyak VCS yang bersifat free open source  dan ada juga yang proprierietary. Berikut adalah daftar VCS yang perlu diketahui :
+1. Bazaar (free) --> disponsori oleh Canonical merupakan bagian GNU Project. Salah sayu layanan yang menggunakan Bazaar adalah Launchpad. Bazaar dapat digunakan di Windows, Ubuntu, Debian, Red Hat, SUSE, OS X, FreeBSD, Solaris, Gentoo, dan lainnya. Meniliki versi GUI dan dapat bekerja secara offline. Mempunyai sistem any workflow, gatekeeper workflow, dan centralized workflow, mempunyai fitur rename tracking dan smart merging, dan kecepatan dan efisiensi penyimpanan yang sangat tinggi. Saat ini Bazaar berada di versi 2.6.0
+2. CVS (free) --> Mendukung pengembangan konkuren oleh banyak pengembang baik secara lokal atau diatas jaringan. Tetapi sangat kurang mendukung untuk atomic commits dan pemindahan / penamaan ulang file. Dapat merekam riwayat dari file dan dokumen. Mendukung unreserved checkouts yaitu lebih dari satu pengembang dapat mengerjakan file yang sama secara bersamaan. CVS Server dapat berjalan di berbagai varian Unix dan CVS Client dapat berjalan di Windows dan varian Unix. Terkadang dapat melakukan server mode di sisi client. Saat ini CVS berada di versi 1.11.23
+3. Subversion (SVN) (free) --> Desain mirip CVS dan lebih sederhanan. Merupakan bagian dari Apache Software Foundation yang didirikan pada tahun 2000 oleh CollabNet Inc. Tersedia untuk Linux, OS X, FreeBSD, dan Windows. Mendukung atomic commits dari sebuah file dan melakukan versioning terhadap direktori, symbolic links, dan meta-data. Selain itu juga mendukung versioning terhadap penamaan, penyalinan, dan penghapusan suatu file atau direktori. Saat ini SVN berada di versi 1.8.9
+4. Mercurial / Hg. Mercurial (free) --> Memiliki konsep distributed source control management tool. Mendukung berbagai workflow. Seluruh riwayat proyek akan disalin saat terjadi kloning pada proyek. Dapat digunakan di Windows, OS X, Linux, dan varian Unix lainnya. Memiliki guide yang dapat mempermudah pengguna baru untuk langsung produktif dalam penggunaannya. Saat ini Mercurial berada di versi 3.1-rc
+5. GIT --> Dikembangkan oleh Linux Torvald ketika mengembangkan Linux (kernel). Merupakan decentralized version control system dengan keunggulan seperti repository syncing, bekerja secara offline, cheap local branching, staging area yang nyaman, mampu menangani proyek besar seperti Kernel Linux secara efektif dalam hal kecepatan dan ukuran data, mendukung non-linear development, dan multiple workflow. Selain itu digunakan di berbagai layanan VCS seperti Github, Bitbucket, Assembla, dan Gitorious. 

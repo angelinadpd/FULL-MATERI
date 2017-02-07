@@ -1,0 +1,27 @@
+I. PENGUJIAN PENGGUNAAN PERINTAH GIT DI WINDOWS
+Penggunaan Git di windows bisa dilakukan dengan 2 cara yaitu dengan GUI atau Command Line. Untuk Command Line juga bisa menggunakan Command Prompt atau Git Bash. Saya memilih menggunakan Git Bash dengan langkah-langkah sebagai berikut :
+1. Buat folder contoh dengan nama "contohgit" klik kanan pada folder ambil "git bash here"
+2. Inisiasikan folder dengan perintah "git init" berfungsi untuk mensetting folder dan file didalamnya adar dapat diatur dan dikontrol oleh perintah-perintah git
+3. Lihat status folder dengan perintah "git status" berfungsi untuk mengetahui apa-apa saja isi folder
+4. Inisialisaikan siapa pengguna dengan perintah "git config --global user.name "Mrs. Angel" dan "git config --global user.email angelinadpd@gmail.com"
+5. Buat file dengan perintah "git add [namafile]" contoh : git add GIT.txt
+note : file terlebih dahulu sudah ada di folder.
+6. Lakukan git status untuk melihat apakah file sudah aktif jika sudah warna yang sebelumnya merah akan berubah hijau
+7. Bisa juga menambahkan file sekaligus banyak dengan perintah "git add "*.txt"" atau "git add *"
+8. Tandai File dengan perintah "git commit -m "1.File yang Baru Ditambahkan" berungsi untuk memeberi pesan atau keterangan (-m) kepada GIT hal ini bertujuan agar git mengetahui bahwa telah terjadi perubahan file pada folder.
+9. Untuk melihat commit berhasil atau tidak gunakan "git log".
+
+II. Mem-push ke GitHub
+Untuk menggunakan server GitHub dilakukan dengan langkah berikut :
+1. pada browser ketik link GitHub berikut "https://github.com"
+2. Jika belum memiliki akun dapat mendaftar jika sudah lanjutkan dengan login
+3. Start a Project untuk mebuat reposity baru
+4. Buat nama Reposity yang diinginkan. Contoh : "Pemahaman tentang GIT" lanjutkan dengan create Reposity
+5. Selanjutnya akan mncul url yang dapat diakses untuk remote repository. Salin url tersebut. 
+6. Setelah itu kembali ke Git Bash dan lakukan perintah ini "git commit -m &quot;Commit Coba-coba, Versi 1&quot;" fungsinya untuk menyimpan Source Code ke dalam repository
+7. tambahkan remote pada git bash agar project dapat diupload dengan perintah "git remote add origin https://github.com/angelinadpd/Pemahaman-tentang-GIT.git"
+8. Selanjutnya panggil file Readme yang ada secara default dengan perintah "git pull -u origin master"
+9. Setelah itu akan muncul file Readme.md pada folder
+10. upload ke github dengan perintah "git push origin master"
+
+File telah terupload ke GitHub.

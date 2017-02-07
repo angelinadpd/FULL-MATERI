@@ -1,0 +1,36 @@
+Konstanta (constant) --> suatu lokasi penyimpanan (dalam memory) yang berisikan nilai yang sifatnya tetap dan tidak bisa diubah sepanjang program berjalan.
+
+
+Aturan Penulisan Konstanta PHP :
+1. Cara Pendefenisikan Konstanta dalam PHP --> karakter pertama hanya boleh berupa huruf dan undescore (_). Sehingga tidak boleh menggunakan angka atau karakter khusus (#,*,&, dll)
+	a). Menggunakan kata kunci (keyword) const.
+	     Hanya bisa digunakan untuk lingkungan global tidak pada function, loop, atau if.
+	contoh : <?php
+   		const situs = "www.duniailkom.com";
+   		echo situs;  // www.duniailkom.com
+		?>
+	b). Menggunakan fungsi define.
+	     Digunakan untuk pembuatan konstanta dalam gunsi, loop, atau if. Membutuhkan 2 nilai, yaitu nama konstanta dan nilainya.
+	contoh : <?php
+   		define("situs", "www.duniailkom.com");
+  		 echo situs;  // www.duniailkom.com
+		?>
+
+2. Konstanta PHP bersifat Case Sensitif
+--> Untuk konstanta disepakati penerapannya menggunakan huruf kapital semuanya. Berfungsi untuk membedakan mana variable dan mana yang konstanta.
+
+3. Nilai Konstanta PHP Tidak Dapat Diubah
+--> Konstanta yang telah didefenisikan nilainya tidak dapat diubah.
+Contoh : <?
+   	define("GAJI", 5000000);
+  	echo GAJI;  echo "<br />"; 
+   	define("GAJI", 5000000);
+	?>
+
+4. Konstanta hanya dapat berisi tipe data tertentu
+--> hanya berisi  tipe data sederhana/ tipe data skalar (boolean, integer, float, dan string) atau tipe data turunan (array, object, atau resources).
+
+
+5. Konstanta Sistem PHP (Predefined Constant)
+--> Konstanta yang telah didefinisikan, tidak bisa di ubah nilainya. Namun karena banyaknya modul yang dapat ditambahkan kedalam PHP, Predefined Constant dalam PHP akan bertambah tergantung modul yang ada. 
+Contoh : PHP_VERSION, PHP_MAJOR_VERSION, PHP_MINOR_VERSION, PHP_RELEASE_VERSION, PHP_VERSION_ID, PHP_EXTRA_VERSION, PHP_ZTS, PHP_DEBUG, PHP_MAXPATHLEN, PHP_OS, PHP_SAPI, PHP_EOL, PHP_INT_MAX, PHP_INT_SIZE, DEFAULT_INCLUDE_PATH, PEAR_INSTALL_DIR, PEAR_EXTENSION_DIR, PHP_EXTENSION_DIR, PHP_PREFIX, PHP_BINDIR, PHP_BINARY, PHP_MANDIR, PHP_LIBDIR, PHP_DATADIR, __LINE__ , __FILE__ , __DIR__ , __FUNCTION__ , __CLASS__ , __TRAIT__ , __METHOD__, __NAMESPACE__,

@@ -1,0 +1,104 @@
+===PSR-1 BASIC CODING STANDARD===
+
+1. OVERVIEW IKHTISAR
+a. File harus menggunakan hanya <?php dan <?= Tag.
+b. File harus menggunakan hanya UTF-8 tanpa BOM untuk kode PHP.
+c. File HARUS baik menyatakan simbol (kelas, fungsi, konstanta, dll) atau menyebabkan efek samping (misalnya menghasilkan output, mengubah pengaturan .ini, dll) tapi TIDAK HARUS melakukan keduanya.
+d. Ruang nama dan kelas HARUS mengikuti "autoloading" PSR: [ PSR-0 , PSR-4 ].
+e. Nama kelas harus dinyatakan di StudlyCaps .
+f. konstanta kelas HARUS dinyatakan dalam huruf besar semua dengan pemisah garis bawah.
+g. Nama metode harus dinyatakan di camelCase .
+
+
+2. FILES ARSIP
+1) PHP Tags PHP Tags
+Kode PHP harus menggunakan panjang <?php ?> Tag atau pendek gema <?= ?> Tag; TIDAK HARUS menggunakan variasi tag lainnya.
+
+2) Character Encoding Pengkodean karakter
+kode PHP harus menggunakan hanya UTF-8 tanpa BOM.
+
+3) Side Effects Efek samping
+a. Sebuah file HARUS menyatakan simbol baru (kelas, fungsi, konstanta, dll) dan tidak menyebabkan efek samping lainnya, atau HARUS mengeksekusi logika dengan efek samping, tetapi TIDAK HARUS melakukan keduanya.
+b. Ungkapan "efek samping" berarti pelaksanaan logika tidak terkait langsung dengan menyatakan kelas, fungsi, konstanta, dll, hanya dari termasuk file.
+c. "Efek samping" termasuk tetapi tidak terbatas pada: menghasilkan output, penggunaan eksplisit require atau include , menghubungkan ke layanan eksternal, memodifikasi pengaturan Penyanyi, memancarkan kesalahan atau pengecualian, memodifikasi variabel global atau statis, membaca dari atau menulis ke file, dan sebagainya.
+
+Contoh yang harus dihindari dari sebuah file dengan kedua deklarasi dan efek samping :
+<?php
+// side effect: change ini settings
+ini_set('error_reporting', E_ALL);
+
+// side effect: loads a file
+include "file.php";
+
+// side effect: generates output
+echo "<html>\n";
+
+// declaration
+function foo()
+{
+    // function body
+}
+
+Contoh yang benar dari file yang berisi deklarasi tanpa efek samping :
+<?php
+// declaration
+function foo()
+{
+    // function body
+}
+
+// conditional declaration is *not* a side effect
+if (! function_exists('bar')) {
+    function bar()
+    {
+        // function body
+    }
+}
+
+
+3. NAMESPACE AND CLASS NAMES
+a. Ruang nama dan kelas HARUS mengikuti "autoloading" PSR: [ PSR-0 , PSR-4 ].
+b. Ini berarti masing-masing kelas dalam file dengan sendirinya, dan dalam namespace setidaknya satu tingkat: tingkat atas nama vendor.
+c. Nama kelas harus dinyatakan di StudlyCaps .
+d. Kode yang ditulis untuk PHP 5.3 dan setelah harus menggunakan ruang nama formal.
+
+Contoh:
+<?php
+// PHP 5.3 and later:
+namespace Vendor\Model;
+
+class Foo
+{
+}
+
+e. Kode yang ditulis untuk 5.2.x dan sebelum HARUS menggunakan konvensi pseudo-namespacing dari Vendor_ prefiks pada nama kelas.
+
+<?php
+// PHP 5.2.x and earlier:
+class Vendor_Model_Foo
+{
+}
+
+
+4. CLASS CONSTANTS, PROPERTIES, AND METHODS
+Istilah "kelas" mengacu pada semua kelas, interface, dan sifat-sifat.
+1) Constants/konstanta
+konstanta kelas HARUS dinyatakan dalam huruf besar semua dengan pemisah garis bawah.
+Contoh:
+ <?php
+namespace Vendor\Model;
+
+class Foo
+{
+    const VERSION = '1.0';
+    const DATE_APPROVED = '2012-06-01';
+}
+
+2) Properties/properti
+Panduan ini sengaja menghindari rekomendasi apapun mengenai penggunaan $StudlyCaps , $camelCase , atau $under_score nama properti.
+Apapun penamaan konvensi digunakan HARUS diterapkan secara konsisten dalam lingkup yang wajar. lingkup yang mungkin vendor-tingkat, paket-tingkat, tingkat kelas, atau metode-tingkat.
+
+3) Methods metode
+Nama metode harus dinyatakan dalam camelCase().
+
+

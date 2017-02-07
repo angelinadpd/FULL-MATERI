@@ -1,0 +1,23 @@
+1. Unix Shell (#) --> Mempengaruhi 1 baris. cocok untuk komentar pendek.
+contoh :
+	<?php
+	   echo "Contoh komentar dengan unix shell" ;
+	   echo "<br />"; #memberi baris baru
+	   echo "Angelina Dinar Puteri Dewi";
+	?>
+
+2. Komentar C++ (//) --> Sifat seperti unix shell hanya tanda yang diganti
+Contoh :
+	<?php
+	   echo "Contoh komentar dengan C++L" ;
+	   echo "<br />"; //memberi baris baru
+	   echo "Angelina Dinar Puteri Dewi";
+	?>
+
+3. Komentar C (/*...*/) --> bersifat blok karna memerlukan penutup. kalimat didalamnya yg berupa komentar.
+contoh :
+	<?php
+	   echo "Contoh komentar dengan C" ;
+	   echo "<br />"; /*memberi baris baru*/
+	   echo "Angelina Dinar Puteri Dewi";
+	?>

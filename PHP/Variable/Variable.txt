@@ -1,0 +1,48 @@
+Variabel --> Kode program yang digunakan untuk menampung nilai baik yg telah diketahui atau pun yg belum diketahui (null) yang sewaktu-waktu dapat berubah selama proses berlangsung. Variable juga dapat menampung inputan dari user.
+
+Aturan penulisan :
+1. Diawali dengan tanda $
+contoh : $nama 
+
+2. Tidak boleh diawali angka
+contoh : $1salah
+
+3. tidak boleh mengandung spasi
+contoh : $yang salah
+             $yang_benar
+
+4. tidak boleh mengandung karakter khusus spt : * dan ^
+
+5. bersifat sensitif case (sensitif terhadap huruf besar dan kecil)
+contoh : <?php
+   	$andi="Andi";
+   	echo $Andi; // tidak akan terdeteksi yang benar $andi
+	?>
+
+6. Cara memberi nilai pada PHP 
+	$namavariable = 'nilai variable';
+contoh :
+	$nama = 'Angelina Dinar Puteri Dewi'
+
+7. tidak perlukan deklarasi terlebih dahulu
+8. Variable tidak betipe baik integer maupun string dan lainnya. sehingga dapat menampung nilai apa saja
+contoh :
+	$a = 'Angel' //string
+	$a = 14 //integer
+	$a = 3.14 //float
+
+9. Predefine Variable --> Variable yang didefenisikan oleh sistem PHP
+yaitu : $GLOBALS , $_SERVER , $_GET , $_POST , $_FILES , $_COOKIE , $_SESSION , $_REQUEST , $_ENV, $php_errormsg, $HTTP_RAW_POST_DATA, $http_response_header, $argc, $argv, $this
+
+
+Cara Menampilkan Nilai Variable
+1. menggunakan perintah "echo" atau "print"
+contoh :
+	<?php
+   		$a='Saya Sedang belajar PHP';
+  	 	$b=5;
+    
+   		print $a; 
+   		echo $b;
+	?>
+

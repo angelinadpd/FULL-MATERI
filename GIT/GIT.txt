@@ -1,0 +1,90 @@
+GIT
+
+I. Pengertian GIT
+Git adalah Version Control System (VCS) yang digunakan para developer untuk mengembangkan software secara bersama-bersama. Di ciptakan oleh Linus Torvaids selaku pembuat Linux untuk mengembangkan front-end tapi kemudian berkembang pesat. Sehingga fungsi utama dari GIT yaitu untuk mengatur versi dari source code, menambahkan tanda/checkpoint ketika terjadi perubahan pada kode dan mempermudah dalam mengetahui apa saja yang berubah dari source code. Selain itu, dengan git kita tak perlu khawatir code yang kita kerjakan bentrok, karena setiap developer bias membuat branch sebagai workspacenya. Fitur yang tak kalah keren lagi, pada git kita bisa memberi komentar pada source code yang telah ditambah/diubah, hal ini mempermudah developer lain untuk tahu  kendala apa yang dialami developer lain. Untuk mengetahui lebih banyak tentang GIT termasuk mendownloadnya dapat dibuka pada situs "www.git-scm.com".
+Jika ingin menggunakan GIT bersama, kita tidak perlu membuat server Git karena sudah bisa menggunakan server dari berbagai provider diantaranya :
+	1. Bitbucket (www.bitbucker.org)
+	2. Github (www.github.com)
+	3. Googlecode (code.google.com)
+	4. Beanstalk (www.beanstalkapp.com)
+
+II. Istilah Penting
+Saat penggunaan GIT akan menemukan beberapa istilah penting seperti :
+1. Working direktory
+--> disebut juga dengan working tree atau working copy yaitu direktori di komputer kita ( lokal) yang memiliki repositori. Indikasinya adalah dengan adanya salah satu subdirektori bernama "git".
+2. Repositori
+--> database yang menyimpan histori dari working direktory. Penambahan, penghapusan, dan perubahan isi file semua kegiatan direkam dalam database ini.
+3. Commit
+--> kondisi working directory pada satu waktu (snapshot) yang direkam dalam histori atau proses menyimpan snapshot. Snapshot terbaru yang direkam disebut Head Commit.
+4. Staging Index
+--> Perubahan yang terjadi pada direktori akan disimpan dulu di staging index. Repositori akan diperbaharui (di update) setelah kita melakukan commit atas file yang ada dalam staging index.
+5. Staged File
+-->file yang ada dalam staging index.
+6. Unstaged File
+--> file yang sudah diupdate tetapi belum masuk ke stagign index.
+7. Branch
+--> setiap repositori minimal memiliki 1 cabang (branch) yang disebut "master branch". Cabang ini boleh saja lebih dari satu dengan histori masing-masing yang nantinya dapat digabung melalui proses merging.
+8. Merge
+--> proses mengggabungkan branch lain ke dalam branch kita.
+9. Untracked File 
+--> file yang tidak pernah dimasukan kedalam staging index sehingga berada di luar kontrol GIT.
+10. Tracked File
+-->file yang dikontrol atau dimonitor oleh GIT
+11. Head
+--> pointer/referensi yang menunjuk pada commit terakhir
+12. Push
+-->proses sinkronisai antara repositori lokal dengan remote repository. Dalam proses ini semua commit terbari diupdate ke repositori tujuan.
+13. Fetch
+--> proses dimana semua commit terbaru diremote repository diunduh ke repositori lokal.
+
+III. KONSEP DASAR GIT
+Ada 3 kondisi utama dalam penggunaan GIT, yaitu :
+1. Committed --> data telah tersimpan dengan aman di database lokal
+2. Modified --> telah terjadi perubahan pada berkas namun belum di commit pada database
+3. Staged --> berkas yang telah diubah pada versi yang sedang berlangsung telah ditandai untuk kemudian dilakukan commit
+
+Kondisi diatas membawa ke dalam bagian utama sebuah project GIT, yaitu :
+1. Direktori GIT
+--> Lokasi dimana Git menyimpan metadata dan database objek untuk projek. Meupakan bagian terpenting, karena bagian inilah yang  disalin ketika dilakukan kloning sebuah repository dari komputer lain.
+2. Direktory Kerja
+--> Sebuah checkout tunggal dari satu versi pada projeck.  Berkas-berkas ini kemudian ditarik keluar dari database yang terkompresi dalam direktori Git dan disimpan pada disk untuk digunakan kembali atau untuk modifikasi.
+3. Staging Area
+--> Sebuah berkas sederhana, umumnya berada dalam direktori Git yang menyimpan informasi mengenai apa yang menjadi commit selanjutnya. Disebut juga sebagai index, tetapi standart penyebutannya adalah "staging area".
+
+Berikut adalah alur kerja dasar dari GIT :
+1. Mengubah berkas dalam direktori kerja.
+2. Membawa berkas ke stage, menambahkan snapshotnya ke staging area.
+3. Melakukan commit, yang mengambil berkas seperti yang ada di staging area dan menyimpan snapshotnya secara permanen ke direktori Git.
+
+IV. PERINTAH DASAR GIT
+1. Git init --> untuk membuat repo lokal baru pada perintah. Ini akan dibuat sebuah folder baru bernama " .git" .
+2. Git Status --> untuk melihat status dari repo lokal.
+3. Git remote --> untuk menambahakan remote repo baru.
+4. Git add --> untuk menambahkan file ke dalam repo yang sebelumnya sudah dibuat.
+5. Git commit --> untuk menyimpan seluruh perubahan yang terjadi.
+6. Git pull/push --> untuk menyimpan dan mengambil data dari remote repo
+
+V. INSTALL GIT
+Untuk dapat digunakan GIT terlebih dahulu harus didownload dengan langkah berikut :
+1. Kunjungi laman resmi GIT berikut "https://git-scm.com/downloads"
+2. Pilih GIT untuk penggunaan mana yang diinginkan atau dibutuhkan. Disini saya mendownload GIT untuk Windows
+3. Setelah didownloas ikuti lanjutkan untuk menjalankan proses install dan ikuti wizard yang ada.
+4. Pada laman Welcome lanjut saja dengan klik "Next"
+5. Laman Persetujuan Lisensi bisa dilanjutnya jika telah setuju dengan peraturan yang ada lanjut dengan "Next"
+6. Laman lokasi, kita dapat memilih lokasi mana yang kita inginka untuk mengintall GIT kemudian "Next"
+7. Laman Komponen, dilaman ini pilih komponen mana saja yang ingin diinstal dengan mencentang jika sudah lanjutkan dengan "Next"
+8. Lanjut Next hingga sampai ke proses install lanjutkan hingga "Finish"
+
+VI. PENGUJIAN PENGGUNAAN PERINTAH GIT DI WINDOWS
+Penggunaan Git di windows bisa dilakukan dengan 2 cara yaitu dengan GUI atau Command Line. Untuk Command Line juga bisa menggunakan Command Prompt atau Git Bash. Saya memilih menggunakan Git Bash dengan langkah-langkah sebagai berikut :
+1. Buat folder contoh dengan nama "contoh git" klik kanan pada folder ambil "git bash here"
+2. Buat folder dengan perintah "mkdir [namafolder]" contoh : mkdir contohgit
+3. Masuk ke dalam directori folder dengan perintah "cd [namafolder] contoh : cd contohgit
+4. Inisiasikan folder dengan perintah "git init" berfungsi untuk mensetting folder dan file didalamnya adar dapat diatur dan dikontrol oleh perintah-perintah git
+5. Lihat status folder dengan perintah "git status" berfungsi untuk mengetahui apa-apa saja isi folder
+6. Buat file dengan perintah "git add [namafile]" contoh : git add GIT.txt
+note : file terlebih dahulu sudah ada di folder.
+7. Lakukan git status untuk melihat apakah file sudah aktif jika sudah warna yang sebelumnya merah akan berubah hijau
+8. Bisa juga menambahkan file sekaligus banyak dengan perintah "git add "*.txt""
+9. Tandai File dengan perintah "git commit -m "1.File yang Baru Ditambahkan" berungsi untuk memeberi pesan atau keterangan (-m) kepada GIT hal ini bertujuan agar git mengetahui bahwa telah terjadi perubahan file pada folder.
+10. Untuk melihat commit berhasil atau tidak gunakan git log.

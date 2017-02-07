@@ -1,0 +1,53 @@
+Langkah-Langkah menggunakan GIT MERGE 
+1. SELAKU PARENT
+a. Buat 1 reposity ke github kemudian copy url yang ada masukkan ke Slack untuk bisa diakses oleh yang lain
+b. Push file ke dalam repo dengan cara :
+    Pada folder klik kanan ambil "Git Bash Here" Ketikkan :
+        git init --> untuk memberti inisialisasi awal
+        git status --> untuk melihat isi pada folder. jika merak lakukan
+        git add . --> untuk merubah isi folder menjadi hijau
+        git push -u origin master --> push ke repo
+        git clone [url di github] --> menyamakan dengan folder yang dimiliki
+        git fetch origin --> untuk mengambil perubahan
+        git rebase origin/master --> memanggil perubahan
+
+2. SELAKU CHILD
+a. Copy url di slack buka di browser
+b. Fork pada sudut atas kanan untuk menjadi child atau pengikut
+c. Pada folder fork yang telah diambil klik kanan pilih "Git Bash Here"
+d. Lakukan coding berikut :
+        git init --> untuk memberti inisialisasi awal
+        git status --> untuk melihat isi pada folder. jika merak lakukan
+        git clone [url fork sendiri] --> menyamakan dengan folder yang dimiliki
+        git remote add upstream [url parent] --> manyamai dengan keadaan induk
+        git remote -v  --> melihat origin dan upstream apakah telah sama keadaannya 
+        git fetch upstream --> untuk mengambil perubahan
+        git rebase upstream/master --> memanggil perubahan
+
+!! Jika  git status file sudah hijau lakukan pembersihan dengan langkah :
+   git reset HEAD .  --> mereset ke keadaan semula
+   git remote -v   
+   git status  --> jikas telah merah lanjutkan ke 
+   git add . --> sampai semua file menjadi hijau
+
+
+PENAMBAHAN MATERI DAN GIT MERGE
+1. CHILD
+a. Lakukan di folder yang sama isi file disana kemudian push ke github.
+b. Agar file tergabung ke repo Parent lakukan Pull Request dengan cara :
+    Pada url anak klik PULL REQUEST --> NEW PULL REQUEST --> CREATE PULL REQUEST --> bisa menambahkan komentar CREATE PULL REQUEST
+c. Tunggu Pull Request diterima oleh induk melalui merge
+
+2. PARENT
+Jika ada child yang mempull, pada Pull Request akan tertera angka jumlah Pull. Untuk menerimanya lakukan langkah berikut :
+a. Klik Pull Request
+b. Klik file yang di pull oleh Child --> Merge Pull Request --> Confirm Merge
+c. Pull Request dari Child telah diterima dan masuk ke dalam Repo
+Jika Parent ingin menambahkan file ke repo lakukan seperti biasa
+
+
+!!! Dalam Merge sangat diperlukan komunikasi antar team terutama dari parent sehingga parent dituntut untuk lebih interaktif. Tujuannya agar apapun perubahan yang terjadi pada repo diketahui oleh seluruh anggota team.
+
+!!! Rajin-rajin lakukan "git fetch" dan git rebase" untuk anggota team agar setiap perubahan yang terjadi di repo semakin terupdate dengan baik.
+
+

@@ -1,0 +1,42 @@
+Aturan penulisan PHP :
+1. Sensitif Case --> sensitif terhadap perbedaan huruf besar atau kecil
+contoh : 
+	<?php
+		echo "Benar";  
+		Echo "Salah";
+		ECHO "Salah";
+		EcHo "Salah";
+	?>
+
+2. Statement (perintah) --> bisa berupa statement simple spt "echo" atau yg lebih rumit spt "kondisi if" dan "loop/perulangan"
+contoh :
+a. echo
+	<?php
+   		echo "Statement echo";
+   		sebuah_fungsi(1, "Angel");
+   		$a = 1;
+   		$nama = "Angel";
+   		$b = $a / 25.0;
+  		if ($y == $z) {
+   		echo "Tampilkan Tabel";
+  		 }
+	?>
+b. if
+	<?php
+   		if (true) {
+  		 echo "Perintah dijalankan";  
+		}
+	?>
+
+3. Spasi dan Tab --> dalam PHP Spasi dan Tab tidak dieksekusi. Namun ada penulisan yang dianjurkan.
+a. Benar, tapi tidak dianjurkan
+	<?php
+	echo "Ini kalimat pertama"; echo "Ini kalimat kedua"; $nama="tidak dianjurkan";
+	?>
+
+b. Benar dan dianjurkan
+	<?php
+		echo "Ini kalimat pertama"; 
+		echo "Ini kalimat kedua"; 
+		$nama="dianjurkan";
+	?>

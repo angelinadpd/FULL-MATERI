@@ -1,0 +1,42 @@
+Tipe data float (floating point/real number) adalah tipe data angka yang memiliki bagian desimal di akhir angka, atau memiliki floating point (floating point adalah istilah dalam bahasa inggris untuk menyebut tanda “titik” yang menandakan bilangan desimal). Contoh : 0,9 atau 3,14
+cocok digunakan untuk variabel yang akan berisi angka pecahan, seperti nilai IPK, hasil pembagian, atau hasil komputasi numerik yang angkanya tidak bisa ditampung oleh data integer.
+Jangkauan angka mulai dari 1.7 x 10^-308 sampai dengan 1.7^+308 dengan 15 digit keakuratan. Tidak perlu khawatir dengan limit angka float ini, karena selain untuk membuat aplikasi matematis tingkat tinggi, kita tidak akan menggunakan angka float sampai 15 digit.
+
+Menurut aturan penafsiran decimal menggunakan "titik (.)" bukan "koma (,)"
+
+Cara Penulisan Tipe Data Float dalam PHP :
+1. Desinal sehari-hari
+contoh : 0.14 atau 3.14
+
+2.  scientific notation --> penyederhanaan penulisan
+contoh :
+0.314E1 --> 0.314*10^1 atau 3.14, 
+12.0E-3 --> 12.0*10^(-3), atau 0.012.
+
+Contoh :
+<?php
+   $angka_float1= 0.78;
+   $angka_float2= 14.99;
+   $angka_scientific1=0.314E1;
+   $angka_scientific2=0.3365E-3;
+ 
+   echo $angka_float1; // 0.78
+   echo "<br />";
+   echo $angka_float2; //14.99
+   echo "<br />";
+   echo $angka_scientific1; //3.14
+   echo "<br />";
+   echo $angka_scientific2; //0.0003365
+?>
+
+Float juga dapat melakukan operasi numeric.
+Contoh : 
+<?php
+   $a=10.66;
+   $b=12.4;
+   $c= $a + $b;
+   echo $c; // 23.06
+ 
+   $d=$a / $b;
+   echo $d; // 0.85967741935484
+?>
