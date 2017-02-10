@@ -1,8 +1,9 @@
  <?php
     class keran
     {
-        public $pemutar;
-        public $badan;
+        public $baut;
+        public $besi;
+        public $kunci;
 
         public function buka()
         {
