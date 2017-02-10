@@ -1,0 +1,36 @@
+Object Interface -->sebuah ‘kontrak’ atau perjanjian implementasi method.
+Bagi class yang menggunakan object interface, class tersebut harus mengimplementasikan ulang seluruh method yang ada di dalam interface. Dalam pemrograman objek, penyebutan object interface sering disingkan dengan ‘Interface’ saja.
+
+interface bisa dikatakan sebagai bentuk lain dari abstract class. Walaupun secara konsep teoritis dan tujuan penggunaannya berbeda.
+
+interface hanya berisi signature dari method, yakni hanya nama method dan parameternya saja (jika ada). Isi dari method akan dibuat ulang di dalam class yang menggunakan interface.
+
+interface adalah implementasi method yang harus ‘tersedia’ dalam sebuah objek. Interface tidak bisa disebut sebagai ‘kerangka’ class.
+
+Contoh:
+	
+<?php
+interface mouse{
+   public function klik_kanan();
+   public function klik_kiri();
+}
+  
+class laptop implements mouse{
+   public function klik_kanan(){
+     return "Klik Kanan...";
+   }
+   public function klik_kiri(){
+     return "Klik Kiri...";
+   }
+}
+ 
+$laptop_baru = new laptop();
+echo $laptop_baru->klik_kanan();
+// Klik Kanan...
+?>
+
+
+--> method interface harus diset sebagai public
+--> interface bisa dituurunkan (inherit)
+--> Bisa memiliki konstanta
+--> Bisa memiliki method normal
