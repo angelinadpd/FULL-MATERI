@@ -1,0 +1,56 @@
+Dalam OOP PHP Abstract terbagi 2, yaitu abstract class dan abstract method. Fungsinya, Abstract class dan abstract method untuk membuat ‘kerangka’ bagi seluruh class dibawahnya. Seperti contoh-contoh kita diatas, setiap class yang diturunkan dari class komputer, ‘pasti’ akan memiliki method lihat_spec().
+1. Abstract Class 
+-->sebuah class yang tidak bisa di-instansiasi (tidak bisa dibuat menjadi objek) dan berperan sebagai ‘kerangka dasar’ bagi class turunannya. Di dalam abstract class umumnya akan memiliki abstract method. Abstract class digunakan di dalam inheritance (pewarisan class) untuk ‘memaksakan’ implementasi method yang sama bagi seluruh class yang diturunkan dari abstract class. Abstract class digunakan untuk membuat struktur logika penurunan di dalam pemrograman objek.
+-->Abstract class tidak bisa diinstansiasi
+-->Bisa memiliki property dan method biasa
+-->Bisa memiliki static method
+
+2. Abstract Method
+-->sebuah ‘method dasar’ yang harus diimplementasikan ulang di dalam class anak (child class). Abstract method ditulis tanpa isi dari method, melainkan hanya ‘signature’-nya saja. Signature dari sebuah method adalah bagian method yang terdiri dari nama method dan parameternya (jika ada).
+
+
+Contoh :
+<?php 
+abstract class AbstractClass 
+{ 
+// Force Extending class to define this method 
+abstract protected function getValue (); 
+abstract protected function prefixValue ( $prefix ); 
+
+// Common method 
+public function printOut () { 
+print $this -> getValue () . "\n" ; 
+} 
+} 
+
+class ConcreteClass1 extends AbstractClass 
+{ 
+protected function getValue () { 
+return "ConcreteClass1" ; 
+} 
+
+public function prefixValue ( $prefix ) { 
+return " { $prefix } ConcreteClass1" ; 
+} 
+} 
+
+class ConcreteClass2 extends AbstractClass 
+{ 
+public function getValue () { 
+return "ConcreteClass2" ; 
+} 
+
+public function prefixValue ( $prefix ) { 
+return " { $prefix } ConcreteClass2" ; 
+} 
+} 
+
+$class1 = new ConcreteClass1 ; 
+$class1 -> printOut (); 
+echo $class1 -> prefixValue ( 'FOO_' ) . "\n" ; 
+
+$class2 = new ConcreteClass2 ; 
+$class2 -> printOut (); 
+echo $class2 -> prefixValue ( 'FOO_' ) . "\n" ; 
+?>
+
