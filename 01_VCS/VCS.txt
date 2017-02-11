@@ -1,7 +1,7 @@
 VERSION CONTROL SYSTEM (VCS)
 
 I. PENGERTIAN
-Version Control System (VCS) atau dikenal sebagai SCM (Source Code Manajemen) atau juga RCS (Revisi Control System) adalah sebuah infrastruktur yang dapat mendukung pengembangan software secara kolaboratif. Artinya, software ini mengelola perubahan ke kode sumber dari waktu ke waktu, melacak setiap modifikasi kode, dan jika terjadi kesalahan pengembang dapat membandigkan dengan versi sebelumnya untuk membantu proses perbaikan dengan meminimalkan gangguan terhadap anggota tim lainnya. Kemampuan kembali ke versi sebelumnya ini disebut reversibility.
+Version Control System (VCS) atau dikenal sebagai SCM (Source Code Manajemen) atau juga RCS (Revisi Control System) adalah sebuah infrastruktur yang dapat mendukung pengembangan software secara kolaboratif. Artinya, software ini mengelola perubahan ke kode sumber dari waktu ke waktu, melacak setiap modifikasi kode, dan jika terjadi kesalahan pengembang dapat membandingkan dengan versi sebelumnya untuk membantu proses perbaikan dengan meminimalkan gangguan terhadap anggota tim lainnya. Kemampuan kembali ke versi sebelumnya ini disebut reversibility.
 Setiap anggota tim pengembangan software dapat menulis kode programnya masing - masing kemudian digabungkan ke server yang sudah memiliki VCS yang digunakan. Proses yang terjadi dalam sebuah team akan lebih transparan dan terstruktur.
 
 II. ALASAN MENGAPA DIPERLUKAN VERSION CONTROL

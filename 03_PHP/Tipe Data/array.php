@@ -1,11 +1,7 @@
 <?php
-/*
-* array adalah kumpulan variabel beripe sama dengan pernyataan nama yang sama.
+/*array adalah kumpulan variabel beripe sama dengan pernyataan nama yang sama.*/
 
-* masih bingung??? lihat contoh
-
-*/
-
+//contoh
 $angka =[1,2,3,4,5,6];
 var_dump($angka);
 

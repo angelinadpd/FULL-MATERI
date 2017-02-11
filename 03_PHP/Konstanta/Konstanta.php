@@ -10,7 +10,7 @@
 ?>
 
 <?php
-   define ("COBA", "Menggunakan keyword const.";
+   define ("COBA", "Menggunakan keyword define.";
    echo COBA;  
 ?
 

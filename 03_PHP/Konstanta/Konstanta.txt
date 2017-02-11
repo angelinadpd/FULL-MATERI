@@ -6,15 +6,15 @@ Aturan Penulisan Konstanta PHP :
 	a). Menggunakan kata kunci (keyword) const.
 	     Hanya bisa digunakan untuk lingkungan global tidak pada function, loop, atau if.
 	contoh : <?php
-   		const situs = "www.duniailkom.com";
-   		echo situs;  // www.duniailkom.com
+   		const COBA = "Menggunakan keyword const.";
+  	 	echo COBA;  //Menggunakan keyword const.
 		?>
 	b). Menggunakan fungsi define.
 	     Digunakan untuk pembuatan konstanta dalam gunsi, loop, atau if. Membutuhkan 2 nilai, yaitu nama konstanta dan nilainya.
 	contoh : <?php
-   		define("situs", "www.duniailkom.com");
-  		 echo situs;  // www.duniailkom.com
-		?>
+   		define ("COBA", "Menggunakan keyword define.";
+   		echo COBA; //Menggunakan keyword define. 
+		?
 
 2. Konstanta PHP bersifat Case Sensitif
 --> Untuk konstanta disepakati penerapannya menggunakan huruf kapital semuanya. Berfungsi untuk membedakan mana variable dan mana yang konstanta.
